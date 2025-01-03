@@ -146,6 +146,11 @@ ul {
     transform: rotate(-140deg);
 }
 
+.container-botao-acao {
+    display: flex;
+    gap: 4px;
+}
+
 .botao-acao {
     background-color: transparent;
     border: none;
