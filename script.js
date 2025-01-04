@@ -1,6 +1,7 @@
 const item = document.getElementById('input-item');
 const salvarItem = document.getElementById('adicionar-botao');
 const listaDeCompras = document.getElementById('lista-de-compras');
+const listaComprados = document.getElementById("lista-comprados");
 let contador = 0;
 
 salvarItem.addEventListener("click", adicionarItem);
@@ -29,11 +30,16 @@ function adicionarItem(evento) {
     checkboxLabel.addEventListener("click", function(evento) {
         const checkboxInput = evento.currentTarget.querySelector(".checkbox-input");
         const checkboxCustomizado = evento.currentTarget.querySelector(".checkbox-customizado");
+        const itemTitulo = evento.currentTarget.closest("li").querySelector("#item-titulo");
 
         if (checkboxInput.checked) {
             checkboxCustomizado.classList.add("checked");
+            itemTitulo.style.textDecoration = "line-through";
+            listaComprados.appendChild(itemDaLista);
         } else {
             checkboxCustomizado.classList.remove("checked");
+            itemTitulo.style.textDecoration = "none";
+            listaDeCompras.appendChild(itemDaLista);
         }
     })
 
@@ -47,6 +53,7 @@ function adicionarItem(evento) {
     containerNomeDoItem.appendChild(containerCheckbox);
 
     const NomeDoItem = document.createElement("p");
+    NomeDoItem.id = "item-titulo";
     NomeDoItem.innerText = item.value;
     containerNomeDoItem.appendChild(NomeDoItem);
 
@@ -73,6 +80,12 @@ function adicionarItem(evento) {
 
     containerItemLista.appendChild(containerNomeDoItem);
     containerItemLista.appendChild(containerBotoes);
+
+    const itemData = document.createElement("p");
+    itemData.innerText = `${new Date().toLocaleDateString("pt-BR", {weekday: "long"})} (${new Date().toLocaleDateString()}) às ${new Date().toLocaleTimeString("pt-BR", {hour: "numeric", minute: "numeric"})}`;
+    itemData.classList.add("item-lista-texto");
+    
     itemDaLista.appendChild(containerItemLista);
+    itemDaLista.appendChild(itemData);
     listaDeCompras.appendChild(itemDaLista);
 }
