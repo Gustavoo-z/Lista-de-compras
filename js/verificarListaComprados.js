@@ -1,9 +1,10 @@
 const listaComprados = document.getElementById("lista-comprados");
+const containerListaComprados = document.getElementById("container-lista-comprados");
 
 export function verificarListaComprados(lista) {
     if (lista.childElementCount === 0) {
-        listaComprados.style.display = "none";
+        containerListaComprados.style.display = "none";
     } else {
-        listaComprados.style.display = "block";
+        containerListaComprados.style.display = "block";
     }
 }

@@ -1,6 +1,7 @@
 import { criarDataHora } from "./criarDataHora.js";
 import { editarItem } from "./editarItem.js";
 import { excluirItem } from "./excluirItem.js";
+import { verificarListaComprados } from "./verificarListaComprados.js";
 
 const listaDeCompras = document.getElementById('lista-de-compras');
 const listaComprados = document.getElementById("lista-comprados");
@@ -39,6 +40,8 @@ export function criarItemDaLista(item) {
             itemTitulo.style.textDecoration = "none";
             listaDeCompras.appendChild(itemDaLista);
         }
+
+        verificarListaComprados(listaComprados);
 })
 
     const checkboxCustomizado = document.createElement("div");

@@ -19,15 +19,20 @@
             <input id="input-item" type="text" placeholder="Digite o item que deseja adicionar">
             <button id="adicionar-botao">Salvar item</button>
         </form>
-        <ul id="lista-de-compras">
-            <h2>Lista de compras</h2>
-            <hr />
-            <p id="mensagem-lista-vazia" style="display: block;">Sua lista está vazia. Adicione itens a ela para não esquecer nada na próxima compra!</p>
-        </ul>
-            <ul id="lista-comprados" style="display: none;">
+        <div class="container-lista">
+            <ul id="lista-de-compras">
+                <h2>Lista de compras</h2>
+                <hr />
+                <p id="mensagem-lista-vazia" style="display: block;">Sua lista está vazia. Adicione itens a ela para não esquecer nada na próxima compra!</p>
+            </ul>
+            <div id="container-lista-comprados" style="display: none;">
                 <h2>Comprado</h2>
                 <hr />
-            </ul>
+                <ul id="lista-comprados">
+                    
+                </ul>
+            </div>
+        </div>
     </main>
     <script src="script.js" type="module"></script>
 </body>
