@@ -8,9 +8,16 @@ const listaComprados = document.getElementById("lista-comprados");
 
 export function adicionarItem(evento) {
     evento.preventDefault();
+
+    if(item.value === "") {
+        alert("Por favor insira um item!");
+        return;
+    }
     
     const itemDaLista = criarItemDaLista(item.value);
     listaDeCompras.appendChild(itemDaLista);
     verificarListaVazia(listaDeCompras);
     verificarListaComprados(listaComprados);
+
+    item.value = "";
 }
