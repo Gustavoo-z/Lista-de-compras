@@ -1,4 +1,3 @@
-const listaComprados = document.getElementById("lista-comprados");
 const containerListaComprados = document.getElementById("container-lista-comprados");
 
 export function verificarListaComprados(lista) {
