@@ -10,8 +10,9 @@ export const editarItem = (elemento) => {
         const estavaComprado = elemento.querySelector(".checkbox-input").checked;
 
         if(estavaComprado) {
-            elemento.querySelector(".input-checkbox").checked = true;
-            elemento.querySelector(".checkbox-customizado").classlist.add("checked");
+            elemento.querySelector(".checkbox-input").checked = true;
+            const checkboxCustomizado = elemento.querySelector(".checkbox-customizado");
+            checkboxCustomizado.classList.add("checked");
             itemTextoAtt.style.textDecoration = "line-through";
         }
         const dataAtualizada = elemento.querySelector(".item-lista-texto");
